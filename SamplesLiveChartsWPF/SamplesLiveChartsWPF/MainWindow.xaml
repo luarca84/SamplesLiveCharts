@@ -20,6 +20,39 @@
                     </lvc:LineChart.AxisX>
                 </lvc:LineChart>
             </TabItem>
+            <TabItem Header="BarChart">
+                <lvc:BarChart LegendLocation="Right" Series="{Binding SeriesBar}">
+                    <lvc:BarChart.AxisY>
+                        <lvc:Axis Title="Calificaciones"/>
+                    </lvc:BarChart.AxisY>
+                    <lvc:BarChart.AxisX>
+                        <lvc:Axis Labels="{Binding Labels}" Title="Alumnos">
+                        </lvc:Axis>
+                    </lvc:BarChart.AxisX>
+                </lvc:BarChart>
+            </TabItem>
+            <TabItem Header="PieChart">
+                <lvc:PieChart LegendLocation="Right" Series="{Binding SeriesPie}">
+                    <lvc:PieChart.AxisY>
+                        <lvc:Axis Title="Calificaciones"/>
+                    </lvc:PieChart.AxisY>
+                    <lvc:PieChart.AxisX>
+                        <lvc:Axis Labels="{Binding Labels}" Title="Alumnos">
+                        </lvc:Axis>
+                    </lvc:PieChart.AxisX>
+                </lvc:PieChart>
+            </TabItem>
+            <TabItem Header="RadarChart">
+                <lvc:RadarChart LegendLocation="Right" Series="{Binding SeriesRadar}">
+                    <lvc:RadarChart.AxisY>
+                        <lvc:Axis Title="Calificaciones"/>
+                    </lvc:RadarChart.AxisY>
+                    <lvc:RadarChart.AxisX>
+                        <lvc:Axis Labels="{Binding Labels}" Title="Alumnos">
+                        </lvc:Axis>
+                    </lvc:RadarChart.AxisX>
+                </lvc:RadarChart>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

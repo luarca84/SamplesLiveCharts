@@ -12,6 +12,9 @@ namespace SamplesLiveChartsWPF
     {
         SeriesCollection series = new SeriesCollection();
         List<string> labels = new List<string>();
+        SeriesCollection seriesBar = new SeriesCollection();
+        SeriesCollection seriesPie = new SeriesCollection();
+        SeriesCollection seriesRadar = new SeriesCollection();
 
         public SeriesCollection Series
         {
@@ -41,6 +44,47 @@ namespace SamplesLiveChartsWPF
             }
         }
 
+        public SeriesCollection SeriesBar
+        {
+            get
+            {
+                return seriesBar;
+            }
+
+            set
+            {
+                seriesBar = value;
+                RaisePropertyChanged("SeriesBar");
+            }
+        }
+
+        public SeriesCollection SeriesPie
+        {
+            get
+            {
+                return seriesPie;
+            }
+
+            set
+            {
+                seriesPie = value;
+                RaisePropertyChanged("SeriesPie");
+            }
+        }
+
+        public SeriesCollection SeriesRadar
+        {
+            get
+            {
+                return seriesRadar;
+            }
+
+            set
+            {
+                seriesRadar = value;
+                RaisePropertyChanged("SeriesRadar");
+            }
+        }
 
         public ViewModelBase()
         {
@@ -69,8 +113,34 @@ namespace SamplesLiveChartsWPF
             };
 
             Series.Clear();
-            series.Add(lineSerie);
+            Series.Add(lineSerie);
 
+            var barSerie = new BarSeries
+            {
+                Title = "Values",
+                Values = cv,
+            };
+
+            SeriesBar.Clear();
+            SeriesBar.Add(barSerie);
+
+            var pieSerie = new PieSeries
+            {
+                Title = "Values",
+                Values = cv,
+            };
+
+            SeriesPie.Clear();
+            SeriesPie.Add(pieSerie);
+
+            var radarSerie = new RadarSeries
+            {
+                Title = "Values",
+                Values = cv,
+            };
+
+            SeriesRadar.Clear();
+            SeriesRadar.Add(radarSerie);
         }
 
 
