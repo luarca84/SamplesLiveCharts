@@ -53,6 +53,17 @@
                     </lvc:RadarChart.AxisX>
                 </lvc:RadarChart>
             </TabItem>
+            <TabItem Header="StackedBarChart">
+                <lvc:StackedBarChart LegendLocation="Right" Series="{Binding SeriesStackedBarChart}">
+                    <lvc:StackedBarChart.AxisY>
+                        <lvc:Axis Title="Calificaciones"/>
+                    </lvc:StackedBarChart.AxisY>
+                    <lvc:StackedBarChart.AxisX>
+                        <lvc:Axis Labels="{Binding Labels}" Title="Alumnos">
+                        </lvc:Axis>
+                    </lvc:StackedBarChart.AxisX>
+                </lvc:StackedBarChart>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -15,6 +15,7 @@ namespace SamplesLiveChartsWPF
         SeriesCollection seriesBar = new SeriesCollection();
         SeriesCollection seriesPie = new SeriesCollection();
         SeriesCollection seriesRadar = new SeriesCollection();
+        SeriesCollection seriesStackedBarChart = new SeriesCollection();
 
         public SeriesCollection Series
         {
@@ -86,6 +87,20 @@ namespace SamplesLiveChartsWPF
             }
         }
 
+        public SeriesCollection SeriesStackedBarChart
+        {
+            get
+            {
+                return seriesStackedBarChart;
+            }
+
+            set
+            {
+                seriesStackedBarChart = value;
+                RaisePropertyChanged("SeriesStackedBarChart");
+            }
+        }
+
         public ViewModelBase()
         {
             List<double> data = new List<double>();
@@ -141,6 +156,21 @@ namespace SamplesLiveChartsWPF
 
             SeriesRadar.Clear();
             SeriesRadar.Add(radarSerie);
+
+            var StackedBarChartSerie = new StackedBarSeries
+            {
+                Title = "Values1",
+                Values = cv,
+            };
+            var StackedBarChartSerie2 = new StackedBarSeries
+            {
+                Title = "Values2",
+                Values = cv,
+            };
+
+            SeriesStackedBarChart.Clear();
+            SeriesStackedBarChart.Add(StackedBarChartSerie);
+            SeriesStackedBarChart.Add(StackedBarChartSerie2);
         }
 
 
